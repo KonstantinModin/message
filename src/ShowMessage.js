@@ -2,10 +2,10 @@ import React from "react";
 
 const ShowMessage = ({ location }) => {
     const query = new URLSearchParams(location.search).get("m");
-    console.log(query);
+    console.log(query, location);
 
-    const tem =
-        "Hi there! Could you please send me docs? I am waiting too long!!!";
+    // const tem =
+    //     "Hi there! Could you please send me docs? I am waiting too long!!!";
 
     return (
         <div className="ShowMessage">
