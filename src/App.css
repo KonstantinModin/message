@@ -1,38 +1,46 @@
 .App {
-  text-align: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App form textarea {
+    width: 400px;
+    height: 200px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App form button {
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    outline: none;
+    border: 1px solid darkviolet;
+    background-color: deeppink;
 }
 
-.App-link {
-  color: #61dafb;
+.App .ShowMessage {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+.App .ShowMessage .Message {
+    margin: auto;
+    font-size: 10rem;
+    display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media only screen and (max-width: 500px) {
+    .App .ShowMessage .Message {
+        font-size: 5rem;
+    }
 }
