@@ -1,15 +1,24 @@
 import React from "react";
+import "./ShowMessage.css";
 
-const ShowMessage = ({ location }) => {
-    const query = new URLSearchParams(location.search).get("m");
-    console.log(query, location);
+const ShowMessage = ({ location: { search, state }, history }) => {
+    const query = new URLSearchParams(search ? search : state.slice(7)).get(
+        "m"
+    );
+    console.log(query, search, state, state && state.slice(7), history);
 
-    // const tem =
-    //     "Hi there! Could you please send me docs? I am waiting too long!!!";
+    const defaultMessage = "404 Message not found!";
 
     return (
-        <div className="ShowMessage">
-            <div className="Message">{query}</div>
+        <div className="ShowMessage container">
+            Debug
+            {state && (
+                <div className="preview">
+                    <span>Preview</span>
+                    <button onClick={() => history.goBack()}>Go back</button>
+                </div>
+            )}
+            <div className="Message">{query ? query : defaultMessage}</div>
         </div>
     );
 };

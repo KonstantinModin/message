@@ -1,46 +1,13 @@
 .App {
+    color: white;
+    font-size: 2rem;
+}
+
+.container {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     width: 100vw;
-}
-
-.App form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    align-items: center;
-}
-
-.App form textarea {
-    width: 400px;
-    height: 200px;
-}
-
-.App form button {
-    padding: 2rem;
-    margin: 2rem;
-    border-radius: 1rem;
-    outline: none;
-    border: 1px solid darkviolet;
-    background-color: deeppink;
-}
-
-.App .ShowMessage {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-}
-.App .ShowMessage .Message {
-    margin: auto;
-    font-size: 10rem;
-    display: flex;
-}
-
-@media only screen and (max-width: 500px) {
-    .App .ShowMessage .Message {
-        font-size: 5rem;
-    }
 }
