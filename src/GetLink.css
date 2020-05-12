@@ -1,0 +1,68 @@
+.App .GetLink input {
+    width: 400px;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.App .GetLink .form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+
+.App .GetLink .form textarea {
+    width: 400px;
+    height: 200px;
+    font-size: 2rem;
+    resize: none;
+}
+
+.App .GetLink .animated {
+    display: block;
+    position: fixed;
+    border: 1px solid white;
+    border-radius: 1rem;
+    top: 40%;
+    z-index: 10;
+    padding: 4rem 6rem;
+    background-color: rgba(0, 0, 0, 0.568);
+}
+
+.App .GetLink .animated h3 {
+    color: rgb(255, 62, 168);
+    margin: auto;
+    /* font-size: 3rem; */
+}
+
+.App .GetLink .form .button {
+    padding: 2rem 4rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    outline: none;
+    border: 2px solid rgb(75, 0, 107);
+    /* background-color: rgb(73, 15, 46); */
+    background-color: rgb(190, 0, 102);
+    font-size: 2rem;
+    transition: all 0.05s ease-in-out;
+    text-decoration: none;
+    color: black;
+}
+.App .GetLink .form .button.preview {
+    padding: 1rem 3rem;
+
+    background-color: rgb(219, 0, 117);
+}
+
+/* .App .GetLink .form button.enabled {
+} */
+
+.App .GetLink .form .button:hover {
+    background-color: rgb(255, 0, 136);
+    transform: scale(1.04);
+}
+
+.App .backgroundImg {
+    background: url(./img/cover.jpg) center center;
+    background-size: cover;
+}

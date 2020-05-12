@@ -1,0 +1,15 @@
+.App .ShowMessage {
+    color: black;
+}
+
+.App .ShowMessage .Message {
+    margin: auto;
+    font-size: 10rem;
+    display: flex;
+}
+
+@media only screen and (max-width: 500px) {
+    .App .ShowMessage .Message {
+        font-size: 5rem;
+    }
+}
