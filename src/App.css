@@ -11,3 +11,18 @@
     height: 100vh;
     width: 100vw;
 }
+
+.App .button {
+    border-radius: 1rem;
+    outline: none;
+    border: 2px solid rgb(75, 0, 107);
+    background-color: rgb(190, 0, 102);
+    transition: all 0.05s ease-in-out;
+    text-decoration: none;
+    color: black;
+}
+
+.App .button:hover {
+    background-color: rgb(255, 0, 136);
+    transform: scale(1.04);
+}

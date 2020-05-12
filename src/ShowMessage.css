@@ -1,10 +1,38 @@
 .App .ShowMessage {
     color: black;
+    background-color: blanchedalmond;
+}
+
+.App .ShowMessage .preview {
+    top: 1rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* border: 1px solid red; */
+    height: 5rem;
+    background-color: rgba(255, 217, 0, 0.267);
+}
+
+.App .ShowMessage .preview button {
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    color: blanchedalmond;
+    height: 4rem;
+    margin: 0.5rem;
+    /* background-color: deeppink; */
+}
+
+.App .ShowMessage .preview span {
+    font-size: 3rem;
+    color: rgb(153, 15, 88);
+    text-shadow: 3px 3px 5px grey;
+    margin-right: 3rem;
 }
 
 .App .ShowMessage .Message {
     margin: auto;
-    font-size: 10rem;
+    font-size: 13rem;
     display: flex;
 }
 

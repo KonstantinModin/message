@@ -11,12 +11,15 @@ import "./App.css";
 const App = () => {
     const [state, setState] = useState("");
     const [visible, setVisible] = useState(false);
+    const [checked, setChecked] = useState(false);
 
     const getLinkProps = {
         state,
         setState,
         visible,
         setVisible,
+        checked,
+        setChecked,
     };
 
     return (

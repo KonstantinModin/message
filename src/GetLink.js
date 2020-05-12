@@ -8,8 +8,17 @@ const URL =
         ? "http://localhost:3000/"
         : "https://wonderful-heyrovsky-e4a6d2.netlify.app/";
 
-const GetLink = ({ state, setState, visible, setVisible }) => {
-    const message = `message?m=${state.trim().split` `.join`%20`}`;
+const GetLink = ({
+    state,
+    setState,
+    visible,
+    setVisible,
+    checked,
+    setChecked,
+}) => {
+    const message = `message?m=${state.trim().split` `.join`%20`}&c=${
+        checked ? "1" : "0"
+    }`;
 
     const inputRef = useRef();
 
@@ -40,7 +49,7 @@ const GetLink = ({ state, setState, visible, setVisible }) => {
 
     return (
         <div className="GetLink container backgroundImg">
-            <h1>Full-screen messages</h1>
+            <h1>BIG-size messages</h1>
             <h3>Type some text to get link to send to your friend</h3>
 
             <Animated
@@ -62,6 +71,15 @@ const GetLink = ({ state, setState, visible, setVisible }) => {
                     value={state}
                     onChange={(e) => setState(e.target.value)}
                 />
+                <div className="confetti">
+                    <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={() => setChecked(!checked)}
+                        id="confetti"
+                    />
+                    <label htmlFor="confetti">Include confetti</label>
+                </div>
                 {!noMessage && (
                     <>
                         <button className="button" onClick={submitHandler}>

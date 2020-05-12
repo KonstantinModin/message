@@ -9,6 +9,17 @@
     flex-direction: column;
     width: 80%;
     align-items: center;
+    /* border: 1px solid red; */
+}
+
+.App .GetLink .form .confetti {
+}
+
+.App .GetLink .form .confetti input {
+    display: inline;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
 }
 
 .App .GetLink .form textarea {
@@ -32,34 +43,17 @@
 .App .GetLink .animated h3 {
     color: rgb(255, 62, 168);
     margin: auto;
-    /* font-size: 3rem; */
 }
 
 .App .GetLink .form .button {
     padding: 2rem 4rem;
     margin: 2rem;
-    border-radius: 1rem;
-    outline: none;
-    border: 2px solid rgb(75, 0, 107);
-    /* background-color: rgb(73, 15, 46); */
-    background-color: rgb(190, 0, 102);
     font-size: 2rem;
-    transition: all 0.05s ease-in-out;
-    text-decoration: none;
-    color: black;
 }
+
 .App .GetLink .form .button.preview {
     padding: 1rem 3rem;
-
     background-color: rgb(219, 0, 117);
-}
-
-/* .App .GetLink .form button.enabled {
-} */
-
-.App .GetLink .form .button:hover {
-    background-color: rgb(255, 0, 136);
-    transform: scale(1.04);
 }
 
 .App .backgroundImg {
