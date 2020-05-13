@@ -1,3 +1,7 @@
+.App .GetLink {
+    /* height: 120vh; */
+}
+
 .App .GetLink input {
     width: 400px;
     padding: 0.5rem;
@@ -51,11 +55,6 @@
 .App .GetLink .form .button.preview {
     padding: 1rem 3rem;
     background-color: rgb(219, 0, 117);
-}
-
-.App .backgroundImg {
-    background: url(./img/cover.jpg) center center;
-    background-size: cover;
 }
 
 @media only screen and (max-width: 500px) {

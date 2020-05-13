@@ -48,7 +48,7 @@ const GetLink = ({
     const noMessage = state.trim().length === 0;
 
     return (
-        <div className="GetLink container backgroundImg">
+        <div className="GetLink container">
             <h1>BIG-size messages</h1>
             <h3>Type some text to get link to send to your friend</h3>
 

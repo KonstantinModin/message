@@ -9,4 +9,8 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: url(./img/cover.jpg) center center repeat-y;
+    background-size: cover;
+    background-attachment: fixed;
+    /* width: 100vw; */
 }
