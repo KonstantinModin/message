@@ -57,3 +57,37 @@
     background: url(./img/cover.jpg) center center;
     background-size: cover;
 }
+
+@media only screen and (max-width: 500px) {
+    .App .GetLink .form {
+        width: 100%;
+    }
+
+    .App .GetLink input {
+        width: 95%;
+    }
+
+    .App .GetLink .form textarea {
+        width: 95%;
+        height: 180px;
+    }
+
+    .App .GetLink .form .button {
+        padding: 1.5rem 4rem;
+        margin: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .App .GetLink .form textarea {
+        width: 95%;
+        height: 130px;
+    }
+
+    .App .GetLink .form .button {
+        padding: 1rem 4rem;
+        margin: 0.5rem;
+        font-size: 1.5rem;
+    }
+}

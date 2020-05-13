@@ -26,3 +26,9 @@
     background-color: rgb(255, 0, 136);
     transform: scale(1.04);
 }
+
+@media only screen and (max-width: 500px) {
+    .App {
+        font-size: 1rem;
+    }
+}
