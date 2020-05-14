@@ -57,14 +57,23 @@ const GetLink = ({
             </Animated>
             <div className="form">
                 <div className="col-2">
-                    <div>
-                        <textarea
-                            type="text"
-                            required
-                            placeholder="Enter your message..."
-                            value={state}
-                            onChange={(e) => setState(e.target.value)}
-                        />
+                    <textarea
+                        type="text"
+                        required
+                        placeholder="Enter your message..."
+                        value={state}
+                        onChange={(e) => setState(e.target.value)}
+                    />
+                    <div className="templates col-1">
+                        <span>Some templates...</span>
+                        <button>Happy Birthday !!!</button>
+                        <button>Congratulations !!!</button>
+                        <button>Good luck !!!</button>
+                        <button>Where is my money ???</button>
+                    </div>
+                </div>
+                {!noMessage && (
+                    <>
                         <div className="confetti">
                             <input
                                 type="checkbox"
@@ -74,15 +83,6 @@ const GetLink = ({
                             />
                             <label htmlFor="confetti">Include confetti</label>
                         </div>
-                    </div>
-                    <div className="templates">
-                        <button>Happy Birthday !!!</button>
-                        <button>Congratulations !!!</button>
-                        <button>Where is my money ???</button>
-                    </div>
-                </div>
-                {!noMessage && (
-                    <>
                         <button className="button" onClick={submitHandler}>
                             Copy Link
                         </button>

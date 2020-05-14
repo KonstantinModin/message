@@ -12,6 +12,16 @@
     width: 100vw;
 }
 
+.App .col-2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.App .col-1 {
+    display: flex;
+    flex-direction: column;
+}
+
 .App .button {
     border-radius: 1rem;
     outline: none;
