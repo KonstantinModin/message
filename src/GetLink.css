@@ -29,8 +29,13 @@
     font-size: 1rem;
 }
 
+.App .GetLink .form .confetti {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+}
+
 .App .GetLink .form .confetti input {
-    display: inline;
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 0.5rem;
@@ -75,23 +80,16 @@
         width: 100%;
     }
 
+    .App .GetLink h1,
+    h3 {
+        margin: 0 0 3px 0;
+    }
+
     .App .GetLink input {
-        width: 95%;
+        width: 90%;
+        padding: 0;
     }
 
-    .App .GetLink .form textarea {
-        width: 95%;
-        height: 180px;
-    }
-
-    .App .GetLink .form .button {
-        padding: 1.5rem 4rem;
-        margin: 1rem;
-        font-size: 1.5rem;
-    }
-}
-
-@media only screen and (max-width: 320px) {
     .App .GetLink .form textarea {
         width: 95%;
         height: 130px;
@@ -99,7 +97,36 @@
 
     .App .GetLink .form .button {
         padding: 1rem 4rem;
+        margin: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .App .GetLink .form .templates {
+        padding: 0;
+    }
+
+    .App .GetLink .form .templates button {
+        margin: 0.4rem;
+        padding: 0.4rem;
+    }
+
+    .App .GetLink .form .button.preview {
+        padding: 0.8rem 3rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .App .GetLink .form textarea {
+        width: 95%;
+        height: 100px;
+    }
+
+    .App .GetLink .form .button {
+        padding: 0.5rem 4rem;
         margin: 0.5rem;
         font-size: 1.5rem;
+    }
+    .App .GetLink .form .button.preview {
+        padding: 0.4rem 3rem;
     }
 }

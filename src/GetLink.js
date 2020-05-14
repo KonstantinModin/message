@@ -1,7 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Animated } from "react-animated-css";
 import "./GetLink.css";
+
+const templates = [
+    "Happy Birthday !!!",
+    "Happy New Year !!!",
+    "Good luck !!!",
+    "Where is my money ???",
+];
 
 const URL =
     !process.env.NODE_ENV || process.env.NODE_ENV === "development"
@@ -66,10 +73,11 @@ const GetLink = ({
                     />
                     <div className="templates col-1">
                         <span>Some templates...</span>
-                        <button>Happy Birthday !!!</button>
-                        <button>Congratulations !!!</button>
-                        <button>Good luck !!!</button>
-                        <button>Where is my money ???</button>
+                        {templates.map((e, i) => (
+                            <button key={i} onClick={() => setState(e)}>
+                                {e}
+                            </button>
+                        ))}
                     </div>
                 </div>
                 {!noMessage && (

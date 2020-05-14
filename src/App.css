@@ -41,4 +41,8 @@
     .App {
         font-size: 1rem;
     }
+
+    .App .col-2 {
+        flex-direction: column;
+    }
 }
