@@ -22,12 +22,6 @@ const GetLink = ({
 
     const inputRef = useRef();
 
-    // useEffect(() => {
-    //     if (inputRef.current) {
-    //         console.dir(inputRef.current);
-    //     }
-    // }, [inputRef]);
-
     const copyToClipboard = async (text) => {
         try {
             await navigator.clipboard.writeText(text);
@@ -51,7 +45,6 @@ const GetLink = ({
         <div className="GetLink container">
             <h1>BIG-size messages</h1>
             <h3>Type some text to get link to send to your friend</h3>
-
             <Animated
                 isVisible={visible}
                 animationIn="swing"
@@ -62,23 +55,31 @@ const GetLink = ({
             >
                 <h3>Link has been copied!!!</h3>
             </Animated>
-
             <div className="form">
-                <textarea
-                    type="text"
-                    required
-                    placeholder="Enter your message..."
-                    value={state}
-                    onChange={(e) => setState(e.target.value)}
-                />
-                <div className="confetti">
-                    <input
-                        type="checkbox"
-                        checked={checked}
-                        onChange={() => setChecked(!checked)}
-                        id="confetti"
-                    />
-                    <label htmlFor="confetti">Include confetti</label>
+                <div className="col-2">
+                    <div>
+                        <textarea
+                            type="text"
+                            required
+                            placeholder="Enter your message..."
+                            value={state}
+                            onChange={(e) => setState(e.target.value)}
+                        />
+                        <div className="confetti">
+                            <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={() => setChecked(!checked)}
+                                id="confetti"
+                            />
+                            <label htmlFor="confetti">Include confetti</label>
+                        </div>
+                    </div>
+                    <div className="templates">
+                        <button>Happy Birthday !!!</button>
+                        <button>Congratulations !!!</button>
+                        <button>Where is my money ???</button>
+                    </div>
                 </div>
                 {!noMessage && (
                     <>
