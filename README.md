@@ -10,7 +10,7 @@
 
 -   BIG-size messages
 -   message preview
-    todo: templates
+-   templates
     todo: fancy background option
     todo: minified urls
 
