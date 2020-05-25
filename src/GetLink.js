@@ -43,27 +43,27 @@ const GetLink = ({
         }
     };
 
-    const onError = (err) => {
-        console.log(JSON.stringify(err));
-    };
-
-    const onLinkCreated = (link) => {
-        console.log(link);
-        console.log(`Link ID is ${link.id}`);
-        console.log(`Short URL is: https://${link.shortUrl}`);
-        console.log(`Destination URL is: ${link.destination}`);
-        copyToClipboard(link.destination);
-        setInputState(link.destination);
-    };
-
     const submitHandler = (e) => {
         e.preventDefault();
-        const slashtag = `test-${Math.floor(Math.random() * 999999)}`;
+        const slashtag = `message-${Math.floor(Math.random() * 999999)}`;
 
         let linkDef = {
             title: "Link",
             slashtag: slashtag,
             destination: URL + message,
+        };
+
+        const onError = (err) => {
+            console.log(JSON.stringify(err));
+        };
+
+        const onLinkCreated = (link) => {
+            console.log(link);
+            console.log(`Link ID is ${link.id}`);
+            console.log(`Short URL is: https://${link.shortUrl}`);
+            console.log(`Destination URL is: ${link.destination}`);
+            copyToClipboard(link.shortUrl);
+            setInputState(link.shortUrl);
         };
 
         rebrClient.createNewLink(linkDef, onLinkCreated, onError);
@@ -120,7 +120,9 @@ const GetLink = ({
                             Copy Link
                         </button>
 
-                        <input value={inputState} ref={inputRef} readOnly />
+                        {inputState && (
+                            <input value={inputState} ref={inputRef} readOnly />
+                        )}
                         <Link
                             className="button preview"
                             to={{ pathname: "/message", state: message }}
