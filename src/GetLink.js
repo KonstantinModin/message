@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import rebrClient from "./rebr.js";
 import { Animated } from "react-animated-css";
 import "./GetLink.css";
 
@@ -29,6 +30,8 @@ const GetLink = ({
 
     const inputRef = useRef();
 
+    const [inputState, setInputState] = useState("");
+
     const copyToClipboard = async (text) => {
         try {
             await navigator.clipboard.writeText(text);
@@ -40,9 +43,31 @@ const GetLink = ({
         }
     };
 
+    const onError = (err) => {
+        console.log(JSON.stringify(err));
+    };
+
+    const onLinkCreated = (link) => {
+        console.log(link);
+        console.log(`Link ID is ${link.id}`);
+        console.log(`Short URL is: https://${link.shortUrl}`);
+        console.log(`Destination URL is: ${link.destination}`);
+        copyToClipboard(link.destination);
+        setInputState(link.destination);
+    };
+
     const submitHandler = (e) => {
         e.preventDefault();
-        copyToClipboard(URL + message);
+        const slashtag = `test-${Math.floor(Math.random() * 999999)}`;
+
+        let linkDef = {
+            title: "Link",
+            slashtag: slashtag,
+            destination: URL + message,
+        };
+
+        rebrClient.createNewLink(linkDef, onLinkCreated, onError);
+
         inputRef.current && inputRef.current.select();
     };
 
@@ -95,7 +120,7 @@ const GetLink = ({
                             Copy Link
                         </button>
 
-                        <input value={URL + message} ref={inputRef} readOnly />
+                        <input value={inputState} ref={inputRef} readOnly />
                         <Link
                             className="button preview"
                             to={{ pathname: "/message", state: message }}
