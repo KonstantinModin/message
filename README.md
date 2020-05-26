@@ -2,9 +2,9 @@
 
 ## Steps:
 
-1 Type some message to your friend
-2 Copy link and send it to your friend via any type of connection (e-mail, whatsapp, telegram)
-3 Your friend will open that link and will see your really BIG-size message in browser
+1. Type some message to your friend
+2. Copy link and send it to your friend via any type of connection (e-mail, whatsapp, telegram)
+3. Your friend will open that link and will see your really BIG-size message in browser
 
 ## Features:
 
@@ -19,6 +19,7 @@
 -   react
 -   react-router
 -   react-animated-css
+-   rebrandly.com for minified urls
 
 ## Author
 

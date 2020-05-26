@@ -46,38 +46,35 @@ const GetLink = ({
 
     const submitHandler = (e) => {
         e.preventDefault();
-        const slashtag = `message-${Math.floor(Math.random() * 999999)}`;
+        if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+            copyToClipboard(URL + message);
+            setInputState(URL + message);
+        } else {
+            const slashtag = `message-${Math.floor(Math.random() * 999999)}`;
 
-        let linkDef = {
-            title: "Link",
-            slashtag: slashtag,
-            destination: URL + message,
-        };
+            const linkDef = {
+                title: "Link",
+                slashtag: slashtag,
+                destination: URL + message,
+            };
 
-        const onError = (err) => {
-            console.log(JSON.stringify(err));
-        };
+            const onError = (err) => {
+                console.log(JSON.stringify(err));
+            };
 
-        const onLinkCreated = (link) => {
-            if (
-                !process.env.NODE_ENV ||
-                process.env.NODE_ENV === "development"
-            ) {
-                copyToClipboard(URL + message);
-                setInputState(URL + message);
-            } else {
+            const onLinkCreated = (link) => {
                 console.log(link);
                 console.log(`Link ID is ${link.id}`);
                 console.log(`Short URL is: https://${link.shortUrl}`);
                 console.log(`Destination URL is: ${link.destination}`);
                 copyToClipboard(link.shortUrl);
                 setInputState(link.shortUrl);
-            }
-            setUntouched(true);
-            inputRef.current && inputRef.current.select();
-        };
+            };
 
-        rebrClient.createNewLink(linkDef, onLinkCreated, onError);
+            rebrClient.createNewLink(linkDef, onLinkCreated, onError);
+        }
+        setUntouched(true);
+        inputRef.current && inputRef.current.select();
     };
 
     const noMessage = state.trim().length === 0;
