@@ -11,8 +11,8 @@
 -   BIG-size messages
 -   message preview
 -   templates
+-   minified urls
     todo: fancy background option
-    todo: minified urls
 
 ## Main libraries
 

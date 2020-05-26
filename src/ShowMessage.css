@@ -38,6 +38,6 @@
 
 @media only screen and (max-width: 500px) {
     .App .ShowMessage .Message {
-        font-size: 5rem;
+        font-size: 4.5rem;
     }
 }

@@ -31,6 +31,7 @@ const GetLink = ({
     const inputRef = useRef();
 
     const [inputState, setInputState] = useState("");
+    const [untouched, setUntouched] = useState(false);
 
     const copyToClipboard = async (text) => {
         try {
@@ -58,20 +59,33 @@ const GetLink = ({
         };
 
         const onLinkCreated = (link) => {
-            console.log(link);
-            console.log(`Link ID is ${link.id}`);
-            console.log(`Short URL is: https://${link.shortUrl}`);
-            console.log(`Destination URL is: ${link.destination}`);
-            copyToClipboard(link.shortUrl);
-            setInputState(link.shortUrl);
+            if (
+                !process.env.NODE_ENV ||
+                process.env.NODE_ENV === "development"
+            ) {
+                copyToClipboard(URL + message);
+                setInputState(URL + message);
+            } else {
+                console.log(link);
+                console.log(`Link ID is ${link.id}`);
+                console.log(`Short URL is: https://${link.shortUrl}`);
+                console.log(`Destination URL is: ${link.destination}`);
+                copyToClipboard(link.shortUrl);
+                setInputState(link.shortUrl);
+            }
+            setUntouched(true);
+            inputRef.current && inputRef.current.select();
         };
 
         rebrClient.createNewLink(linkDef, onLinkCreated, onError);
-
-        inputRef.current && inputRef.current.select();
     };
 
     const noMessage = state.trim().length === 0;
+
+    const textAreaOnChangeHandler = (e) => {
+        setState(e.target.value);
+        setUntouched(false);
+    };
 
     return (
         <div className="GetLink container">
@@ -94,7 +108,7 @@ const GetLink = ({
                         required
                         placeholder="Enter your message..."
                         value={state}
-                        onChange={(e) => setState(e.target.value)}
+                        onChange={textAreaOnChangeHandler}
                     />
                     <div className="templates col-1">
                         <span>Some templates...</span>
@@ -120,7 +134,7 @@ const GetLink = ({
                             Copy Link
                         </button>
 
-                        {inputState && (
+                        {untouched && (
                             <input value={inputState} ref={inputRef} readOnly />
                         )}
                         <Link
