@@ -63,10 +63,10 @@ const GetLink = ({
             };
 
             const onLinkCreated = (link) => {
-                console.log(link);
-                console.log(`Link ID is ${link.id}`);
-                console.log(`Short URL is: https://${link.shortUrl}`);
-                console.log(`Destination URL is: ${link.destination}`);
+                // console.log(link);
+                // console.log(`Link ID is ${link.id}`);
+                // console.log(`Short URL is: https://${link.shortUrl}`);
+                // console.log(`Destination URL is: ${link.destination}`);
                 copyToClipboard(link.shortUrl);
                 setInputState(link.shortUrl);
             };
