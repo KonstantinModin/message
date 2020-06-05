@@ -5,12 +5,18 @@ import "./ShowMessage.css";
 
 const ShowMessage = ({ location: { search, state }, history }) => {
     const query = new URLSearchParams(state ? state.slice(7) : search);
-    const message = query.get("m");
+    const message = query.get("m") || "404 Message not found!";
     const confetti = query.get("c") === "1";
 
-    console.log(query, search, state, state && state.slice(7), history);
+    // console.log(query, search, state, state && state.slice(7), history);
 
-    const defaultMessage = "404 Message not found!";
+    const wordsArray = message.trim().split` `;
+    const words = wordsArray.length;
+    const maxWordLength = wordsArray.reduce(
+        (a, b) => (b.length > a ? b.length : a),
+        0
+    );
+    console.table({ maxWordLength, words });
 
     const { width, height } = useWindowSize();
 
@@ -25,7 +31,7 @@ const ShowMessage = ({ location: { search, state }, history }) => {
                     </button>
                 </div>
             )}
-            <div className="Message">{message ? message : defaultMessage}</div>
+            <div className="Message">{message}</div>
         </div>
     );
 };
